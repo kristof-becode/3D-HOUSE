@@ -40,7 +40,7 @@ The DSM represents the top of surfaces(trees, buildings..), while the DTM repres
 
 Tiling DSM and DTM raster files
 
-These files were between several 100 Mb and over1 Gb in size so I was necessary to cut them into tiles for rendering and further processing. The code for this step can be found in 'Cut DSM.py' and 'Cut DTM.py' .
+These files were between several 100 Mb and over1 Gb in size so it was necessary to cut them into tiles for rendering and further processing. The code for this step can be found in 'Cut DSM.py' and 'Cut DTM.py' .
 
 ### Creating a Canopy Height Model(CHM)
 
@@ -48,7 +48,7 @@ Canopy Height Model (CHM): the height or residual distance between the ground an
 
 <img src="https://github.com/kristof-becode/3D-House/blob/master/lidarTree-height.png" align ="center" width=25% height=25%/>
 
-The Canopy Height Model is calculated from the cut DSM and DTM tiles from previous step. The cut DTM is substacted from the corresponding cut DSM raster file and the resulting Canopy Height Model raster file is saved. From now on we will be only working with this file. The code for this processing step can be found in 'Create CHM.py' .
+The Canopy Height Model is calculated from the cut DSM and DTM tiles from previous step. The cut DTM is subtracted from the corresponding cut DSM raster file and the resulting Canopy Height Model raster file is saved. From now on we will be only working with this file. The code for this processing step can be found in 'Create CHM.py' .
 
 ### Getting the coordinates of an address
 
@@ -56,9 +56,9 @@ We can get the coordinates of an address in Flanders by making a request from an
 http://loc.geopunt.be/geolocation/location?q={address}&c=1
 
 The resulting coordinates are in Lambert coordinates, the geospatial coordinate convention in Belgium, which matches the coordinates in the GeoTiff raster files.
-Now that we can link an address to coordinates we can select the corresponding CHM file in which lies the house we would like to plot.
+Now that we can link an address to coordinates we can select the corresponding CHM file for the house we would like to plot.
 
-To this end we create a CSV file that lists all the CHM files and the coordinate region they represent, or more precisely lists the corresponding corners coordinates of the bounding box. The code to create this CSV file can be found in 'Create Dataframe CHM.py'
+To this end we create a CSV file that lists all the CHM files and the coordinate region they represent, or more precisely lists the corresponding corner coordinates of the bounding box. The code to create this CSV file can be found in 'Create Dataframe CHM.py'
 
 ### Retrieving the house polygon from API
 
@@ -68,7 +68,7 @@ From this polygon we can retrieve an area and circumference on ground level usin
 
 ### Creating mask from CHM with polygon shape
 
-Now we can create a mask from the CHM with the polygon shape using the rasterio mask function. We have effectively cut out the shape of the house from the raster file based on the polygon. From this mask we can also retrieve the height of the house. For code, see '3DHouse Final.py' .
+Now we can create a mask from the CHM with the polygon shape using the Rasterio mask function. We have effectively cut out the shape of the house from the raster file based on the polygon. From this mask we can also retrieve the height of the house. For code, see '3DHouse Final.py' .
 
 ### 3D House Plot
 
