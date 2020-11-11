@@ -25,7 +25,7 @@ This is the first program I wrote in Python as part of an AI Bootcamp training.
 
 Data was gathered from a government website that provides Digital Surface Models(DSM) and Digital Terrain Models(DTM) in GeoTiff format of the entire Flanders area. These files were processed from LIDAR plane data.
 
-DSM files rerieved from:
+DSM files retrieved from:
 http://www.geopunt.be/download?container=dhm-vlaanderen-ii-dsm-raster-1m&title=Digitaal%20Hoogtemodel%20Vlaanderen%20II,%20DSM,%20raster,%201m
 
 DTM files retrieved from:
